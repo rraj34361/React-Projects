@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
-
-export default function BookCreate({onCreate}) {
+import{useState} from 'react';
+import useBookContext from '../hooks/use-books-context';
+export default function BookCreate() {
 
 const  [value, setValue] = useState('')
-
+const {createBook } = useBookContext()
 
 const handleSubmit = (event)=>{
     event.preventDefault()
-    onCreate(value)
+    createBook(value)
     setValue('')
 }
 
